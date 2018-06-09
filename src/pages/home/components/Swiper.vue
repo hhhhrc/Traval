@@ -1,8 +1,9 @@
 <template>
 	<div class="wrapper">
-	<swiper :options="swiperOption">
+	<swiper :options="swiperOption" v-if="showSwiper">
+		<!-- 由于下面一开始是以空数组创建,会从最后一张图开始显示,上面设置了不是空数组才创建 -->
 		<!-- slides -->
-		<swiper-slide v-for="item of swiperlist" :key="item.id">
+		<swiper-slide v-for="item of list" :key="item.id">
 			<img class="swiper-img" :src="item.imgUrl">
 		</swiper-slide>
 		<!-- Optional controls -->
@@ -14,21 +15,23 @@
 <script>
 	export default{
 		name:'HomeSwiper',
+		props:{
+			list:Array
+		},
 		data () {
 			return{
 				swiperOption:{
 					pagination:'.swiper-pagination',
 					loop:true
-				},
-				swiperlist:[{
-					id:'0001',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1805/66/f87b0d1f49ab4c02.jpg_750x200_dfab2c85.jpg'
-				},{
-					id:'0002',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/b5/8bd6da9d794e1902.jpg_750x200_b1a28179.jpg'
-				}]
+				}
+			}
+		},
+		computed:{
+			showSwiper(){
+				return this.list.length
 			}
 		}
+
 	}
 </script>
 
