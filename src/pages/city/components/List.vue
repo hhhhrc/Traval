@@ -20,7 +20,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="area" v-for="(item,key) of cities" :key="key">
+			<div class="area" 
+			v-for="(item,key) of cities" 
+			:key="key"
+			:ref="key"
+			>
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
 					<div class="item border-bottom"
@@ -41,12 +45,24 @@
 		name:"CityList",
 		props:{
 			cities: Object,
-			hot: Array	
+			hot: Array	,
+			letter:String
 		},
 		mounted(){
-			this.scoll= new Bscroll(this.$refs.wrapper)
-		}
+			this.scroll= new Bscroll(this.$refs.wrapper)
+		},
 		// mounted在DOM挂载完成后执行
+	  watch: {
+	    letter () {
+	      if (this.letter) {
+	        const element = this.$refs[this.letter][0]
+	        // 获取到数组,但是scroll需要dom,所以加[0]
+	        this.scroll.scrollToElement(element)
+	        	// console.log(element)
+	      }
+	    }
+	  }
+	  // 监听change事件,获取数据
 	}
 </script>
 
