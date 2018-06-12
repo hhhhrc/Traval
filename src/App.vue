@@ -1,6 +1,7 @@
 <template>
   <div id="app">
 	<keep-alive exclude="Detail">
+		<!-- 除了Detai都会被缓存 -->
     	<router-view/>
 	</keep-alive>
 	<!-- 路由中的内容加载过一次之后就放入内存之中,无需再次渲染 -->
