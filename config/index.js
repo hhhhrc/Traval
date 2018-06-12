@@ -12,9 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/api':{
-            target:'https://hhhhrc.github.io/Vue-Travel/dist/#/',
-            secure:false,
-            changeOrigin:true,
+            target:'http://localhost:8080',
             pathRewrite:{
                 '^/api':'/static/mock'
             }
