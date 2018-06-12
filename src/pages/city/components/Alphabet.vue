@@ -5,7 +5,7 @@
 		:key="item"
 		:ref="item"
 		@click="handleLetterClick"
-		@touchstart="handleTouchStart"
+		@touchstart.prevent="handleTouchStart"
 		@touchmove="handleTouchMove"
 		@touchend="handleTouchEnd"
 		>
@@ -61,7 +61,7 @@
 						if(index>=0&&index<this.letters.length){
 							this.$emit('change',this.letters[index])
 						}
-					},16)
+					},5)
 					// 函数节流:让函数过16毫秒再执行,中间如果滚动了,清除上一次执行这一次
 					// 降低函数执行频率,提高性能
 				}

@@ -77,7 +77,10 @@
 	  },
 	  // 监听change事件,获取数据
   		mounted(){
-		this.scroll= new Bscroll(this.$refs.wrapper)
+		this.scroll= new Bscroll(this.$refs.wrapper,{
+			click:true,
+			taps:true
+		})
 	},
 	// mounted在DOM挂载完成后执行
 	}
