@@ -3,10 +3,12 @@
 		<div class="header-left">
 			<div class="iconfont back-icon">&#xe624;</div>
 		</div>
+	<router-link to='/city'>
 		<div class="header-input">
 		<span class="iconfont">&#xe632;</span>
 		输入城市/景点/游玩主题
 		</div>
+	</router-link>
 		<router-link to='/city'>
 			<div class="header-right">
 				<!-- {{this.$store.state.city}} -->
@@ -34,18 +36,19 @@
 // @指向src目录,样式里引入样式前面加~,import前面加@
 @import '~styles/varibles.styl'
 .header
-	display:flex
 	line-height: $headerHeight
 	background:$bgColor
 	color:#fff
 	.header-left
-		width: .64rem
-		float:left
+		display inline-block
+		width: 10%
+
 		.back-icon
 			text-align:center
 			font-size: .4rem
 	.header-input
-		flex:1
+		display:inline-block
+		width:66%
 		height: .64rem
 		line-height: .64rem
 		margin-top: .12rem
@@ -55,9 +58,10 @@
 		border-radius: .1rem
 		color: #ccc
 	.header-right
+		float right
+		display:inline-block
 		min-width: 1.04rem
 		padding: 0 .1rem
-		float:right
 		text-align:center
 		color:#fff
 		.arrow-icon
