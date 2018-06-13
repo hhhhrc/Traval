@@ -4,7 +4,7 @@
 		v-for="item of letters" 
 		:key="item"
 		:ref="item"
-		@click="handleLetterClick"
+		@click.prevent="handleLetterClick"
 		@touchstart.prevent="handleTouchStart"
 		@touchmove="handleTouchMove"
 		@touchend="handleTouchEnd"
@@ -62,7 +62,7 @@
 							this.$emit('change',this.letters[index])
 						}
 					},5)
-					// 函数节流:让函数过16毫秒再执行,中间如果滚动了,清除上一次执行这一次
+					// 函数节流:让函数过5毫秒再执行,中间如果滚动了,清除上一次执行这一次
 					// 降低函数执行频率,提高性能
 				}
 			},

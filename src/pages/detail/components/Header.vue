@@ -42,11 +42,10 @@ export default{
 				this.showAbs=true
 			}
 		}
-	},
-	mounted(){
+	},created(){
 		window.addEventListener('scroll',this.handleScroll)
 	},
-	unmounted(){
+	uncreated(){
 		window.removeEventListener('scroll',this.handleScroll)
 	}
 }
