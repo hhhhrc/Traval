@@ -1,16 +1,16 @@
 <template>
 	<ul class="list">
-		<li class="item" 
+		<a class="item" 
 		v-for="item of letters" 
 		:key="item"
 		:ref="item"
-		@click.prevent="handleLetterClick"
+		@click="handleLetterClick"
 		@touchstart.prevent="handleTouchStart"
 		@touchmove="handleTouchMove"
 		@touchend="handleTouchEnd"
 		>
 		{{item}}
-		</li>
+		</a>
 	</ul>
 </template>
 
@@ -36,7 +36,7 @@
 				timer: null
 			}
 		},
-		updated (){
+		mounted (){
 			this.startY = this.$refs['A'][0].offsetTop
 				// A距离上面框的距离
 		},
@@ -62,7 +62,7 @@
 							this.$emit('change',this.letters[index])
 						}
 					},5)
-					// 函数节流:让函数过5毫秒再执行,中间如果滚动了,清除上一次执行这一次
+					// 函数节流:让函数过16毫秒再执行,中间如果滚动了,清除上一次执行这一次
 					// 降低函数执行频率,提高性能
 				}
 			},

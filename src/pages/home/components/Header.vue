@@ -36,6 +36,7 @@
 // @指向src目录,样式里引入样式前面加~,import前面加@
 @import '~styles/varibles.styl'
 .header
+	// display flex
 	line-height: $headerHeight
 	background:$bgColor
 	color:#fff
@@ -48,7 +49,7 @@
 			font-size: .4rem
 	.header-input
 		display:inline-block
-		width:66%
+		width:62%
 		height: .64rem
 		line-height: .64rem
 		margin-top: .12rem

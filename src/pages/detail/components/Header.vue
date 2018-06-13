@@ -43,7 +43,7 @@ export default{
 			}
 		}
 	},created(){
-		window.addEventListener('scroll',this.handleScroll)
+		window.addEventListener('scroll',this.handleScroll,true)
 	},
 	uncreated(){
 		window.removeEventListener('scroll',this.handleScroll)
